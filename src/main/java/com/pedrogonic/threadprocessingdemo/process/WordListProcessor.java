@@ -19,7 +19,7 @@ public class WordListProcessor implements Runnable {
         for(String word : words) {
             try {
                 log.info(word);
-                Thread.currentThread().sleep(1000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
