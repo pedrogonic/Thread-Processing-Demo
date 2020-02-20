@@ -79,3 +79,35 @@ Processing...
 
 **Response Codes:** **200** (OK).
 
+### POST /waitProcess
+
+**Description:** Pass a list of strings and wait for all Threads to be processed.
+
+#### Request
+
+**Request Body:**
+Eg:
+```bash
+[
+	"word 1",
+	"word 2",
+	"word 3"
+]
+```
+**Request URL:**
+
+E.g.:
+```shell
+http://localhost:8080/waitProcess
+```
+
+#### Response
+
+E.g.:
+```bash
+Finished parallel processes! 
+Processed word word1 in 9 seconds, Processed word word2 in 4 seconds, Processed word word3 in 5 seconds.
+```
+
+**Response Codes:** **200** (OK).
+

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @Slf4j
@@ -26,6 +27,17 @@ public class WordProcessorService {
         Long duration = new Random().nextInt(10) * 1000L;
         Thread.sleep(duration);
         log.info(duration/1000 + " seconds: " + word);
+    }
+
+    @Async
+    public CompletableFuture<String> processWordAsync(String word) throws InterruptedException {
+        Long duration = new Random().nextInt(10) * 1000L;
+        Thread.sleep(duration);
+        String msg = duration/1000 + " seconds: " + word;
+        log.info(msg);
+
+        msg = "Processed word " + word + " in " + duration/1000 + " seconds";
+        return CompletableFuture.completedFuture(msg);
     }
 
 }
