@@ -21,4 +21,11 @@ public class MainController {
         return service.processWordList(words);
     }
 
+    @PostMapping("/processAsync")
+    public String processAsync(@RequestBody List<String> words) throws InterruptedException {
+        for (String word : words)
+            service.processWord(word);
+        return "Processing...";
+    }
+
 }

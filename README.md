@@ -49,4 +49,33 @@ Processing...
 
 **Response Codes:** **200** (OK).
 
+### POST /processAsync
+
+**Description:** Pass a list of strings and immediately receive a "Processing..." response. Open the terminal and watch each word being printed in a random delay. Each word is processed in a new Thread.
+
+#### Request
+
+**Request Body:**
+Eg:
+```bash
+[
+	"word 1",
+	"word 2",
+	"word 3"
+]
+```
+**Request URL:**
+
+E.g.:
+```shell
+http://localhost:8080/processAsync
+```
+
+#### Response
+
+```bash
+Processing...
+```
+
+**Response Codes:** **200** (OK).
 
